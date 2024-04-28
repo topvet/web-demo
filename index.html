@@ -8,22 +8,6 @@
         padding: 0px; 
         overflow: hidden;
       }
-      .iframe-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 50%;
-        background: lightgrey;
-      }
-      .iframe-container iframe {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 1px solid red;
-      }
       .wrapper {
       	position: relative;
       	height: 100%;
@@ -37,10 +21,24 @@
       	height: 100%;*/
       }
     </style>
+    <script>
+      function setSize (iFrame) {
+        iFrame.width  = window.innerWidth
+        iFrame.height = window.innerHeight
+      }
+      window.addEventListener('DOMContentLoaded', function () {
+        const frame = document.querySelector('iframe')
+        setSize(frame)
+      })
+      window.addEventListener('resize', function () {
+        const frame = document.querySelector('iframe')
+        setSize(frame)
+      })
+    </script>
   </head>
   <body>
     <div class="wrapper">
-      <iframe src="https://topvet-beta.streamlit.app?embed=True" width="100%" style="border: 0; overflow: hidden; height: 100%" frameBorder="0">
+      <iframe src="https://topvet-beta.streamlit.app?embed=True" style="border: 0; overflow: hidden;" frameBorder="0">
         Actualice su navegador para usar TopVet.AI
       </iframe>
     </div>
