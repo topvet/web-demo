@@ -12,6 +12,8 @@
       	position: relative;
       	height: 100%;
         bottom: -35px;
+        width: 100%;
+        text-align: center;
       }
       .wrapper iframe {
       	/* position: absolute;
@@ -23,7 +25,7 @@
     </style>
     <script>
       function setSize (iFrame) {
-        iFrame.width  = window.innerWidth
+        iFrame.width  = 600 // window.innerWidth
         iFrame.height = window.innerHeight
       }
       window.addEventListener('DOMContentLoaded', function () {
